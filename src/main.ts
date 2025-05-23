@@ -1,1 +1,1 @@
-import { GM_addElement, GM_log } from "$"
+import { GM_addElement, GM_log, GM_registerMenuCommand } from "$"
