@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      autolog.js:
+        specifier: ^3.0.1
+        version: 3.0.1
     devDependencies:
       typescript:
         specifier: 5.8.3
@@ -295,6 +299,9 @@ packages:
     resolution: {integrity: sha512-OvQ/2pUDKmgfCg++xsTX1wGxfTaszcHVcTctW4UJB4hibJx2HXxxO5UmVgyjMa+ZDsiaf5wWLXYpRWMmBI0QHg==}
     engines: {node: '>=0.4.0'}
     hasBin: true
+
+  autolog.js@3.0.1:
+    resolution: {integrity: sha512-LYRzQGmhuvq9Xco4YsPcgw3GrUxkygPyKeK8b0pyRHdnbQohB4MxRytAGYbXrwRxWT03l3NP0iCnqAnFcqlp3w==}
 
   bundle-name@4.1.0:
     resolution: {integrity: sha512-tjwM5exMg6BGRI+kNmTntNsvdZS1X8BFYS6tnJ2hdH0kVxM6/eVZ2xy+FqStSWvYmtfFMDLIxurorHwDKfDz5Q==}
@@ -637,6 +644,8 @@ snapshots:
       acorn: 8.14.1
 
   acorn@8.14.1: {}
+
+  autolog.js@3.0.1: {}
 
   bundle-name@4.1.0:
     dependencies:
