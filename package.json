@@ -1,8 +1,18 @@
 {
   "name": "vite-monkey",
+  "description": "通过 vite 插件学习油猴插件",
   "private": true,
-  "version": "0.0.0",
+  "license": "GPL-3.0-only",
+  "version": "1.0.0",
   "type": "module",
+  "author": {
+    "name": "我是小海洋呀",
+    "email": "1037306928@qq.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/miniocean404-tool/vite-monkey"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

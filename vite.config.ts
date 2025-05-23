@@ -1,5 +1,6 @@
 import { defineConfig } from "vite"
 import monkey from "vite-plugin-monkey"
+import pkg from "./package.json"
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -8,20 +9,25 @@ export default defineConfig({
       entry: "src/main.ts",
       userscript: {
         name: "学习油猴插件",
-        version: "1.0.0",
-        author: "我是小海洋呀",
-        description: "通过 vite 插件学习油猴插件",
-        copyright: "我是版权语句",
+        // 可以是 data:image/png;base64,xxxx 格式的图片
         icon: "https://vitejs.dev/logo.svg",
-        namespace: "miniocean404",
-        // 插件匹配的网页（<protocol>://<domain><path>）或 *
+        copyright: "我是版权语句",
+        version: pkg.version,
+        author: pkg.author.name,
+        description: pkg.description,
+        license: pkg.license,
+        // 命名空间
+        namespace: pkg.repository.url,
+        // 反馈地址
+        supportURL: `${pkg.repository.url}/issues`,
+        // 插件匹配的网页（<protocol>://<domain><path>）或 * 例如（"*://*.csdn.net/*"）
         match: ["https://www.google.com"],
         // 脚本应该运行的页面。允许多个标签实例。 @include不支持URL哈希参数。您必须在没有哈希参数的情况下匹配路径并使用window.onurlchange
         // include:[],
         // 插件排除的具体地址，即使他们在 @include 或  @match 中
         exclude: [""],
-        // 插件运行时允许使用的 api
-        grant: "*",
+        // 插件运行时允许使用的 api --- @grant不用管，使用import GM_xxx from "ViteGM"会自动添加
+        // grant: "*",
         homepage: "https://github.com/MiniOcean404",
         // 引入 cdn 资源包
         // require:[]
@@ -35,12 +41,30 @@ export default defineConfig({
         "run-in": ["normal-tabs", "incognito-tabs"],
         // 默认 raw 模式
         sandbox: "raw",
+        // GM_xmlhttpRequest 允许访问的域
+        // connect:[]
         // 此标签使脚本在主页上运行，但不在iFrames上。
         // noframes: true,
         // 脚本更新的 URL。注意：需要一个@version标签才能使更新检查起作用。
         // updateURL:""
         // 定义URL检测到更新时将从脚本下载的URL。如果值不使用该值，则不会进行更新检查。
         // downloadURL:""
+      },
+      // import { GM_xxx } from "$" 中 $ 的别名
+      clientAlias: "$",
+      server: {
+        // 把GM api 挂载到unsafeWindow上
+        mountGmApi: false,
+        // dev时浏览器自动访问地址从而触发脚本管理器安装本脚本
+        open: true,
+      },
+      build: {
+        // 输出的文件名
+        fileName: "monkey.user.js",
+        // 输出.meta.js
+        metaFileName: true,
+        // 自动申请权限，可以不用填上面的grant
+        autoGrant: true,
       },
     }),
   ],
