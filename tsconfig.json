@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+
+    "target": "ESNext",
+    "module": "ESNext",
+    "lib": ["ESNext", "DOM"],
+    "moduleResolution": "Node",
+    "isolatedModules": true, // 每个文件都被视为单独的模块
+
+    "noEmit": true, // 不生成输出文件
+    "allowJs": true, // 允许编译 JS 文件
+    "resolveJsonModule": true, // 允许导入 JSON 模块
+    "esModuleInterop": true, // 发出额外的 JavaScript 来简化对导入 CommonJS 模块的支持
+    "allowSyntheticDefaultImports": true, // 允许从没有设置默认导出的模块中默认导入
+    "allowImportingTsExtensions": true, // 允许导入带有 .ts 扩展名的文件
+    "sourceMap": true, // 生成 sourceMap 文件
+    "removeComments": false, // 保留注释
+    "preserveConstEnums": true, // 保留 const 和 enum 声明
+    "forceConsistentCasingInFileNames": true, // 用于强制检查文件路径的大小写一致性
+    "useDefineForClassFields": true, // 使用 defineProperty 来定义类字段, 开启需要 es2022 的支持，关闭可以兼容旧浏览器
+
+    "skipLibCheck": true,
+
+    "strictNullChecks": true, // 启用严格的 null 检查
+    "noImplicitAny": false, // 禁用隐式 any 类型检查
+    "noUnusedLocals": false, // 关闭本地变量未被读取时的错误
+    "noUnusedParameters": false, // 关闭未使用的参数错误
+    "noImplicitReturns": true
+  },
+  "include": ["src"]
+}
