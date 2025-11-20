@@ -5,6 +5,4 @@ import "./index.css"
 import { logger } from "./utils/logger"
 import { onMountedHotkeys, onMountedPanel } from "./pancel"
 
-onMountedHotkeys("vite-monkey-app", "ctrl+shift+u", <App />, (isMoutend) => {
-  console.log("✅ ~ isMoutend - :", isMoutend)
-})
+onMountedHotkeys("vite-monkey-app", "ctrl+shift+u", <App />)
