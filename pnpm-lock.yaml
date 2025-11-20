@@ -14,6 +14,9 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      hotkeys-js:
+        specifier: 4.0.0-beta.6
+        version: 4.0.0-beta.6
       react:
         specifier: ^19.2.0
         version: 19.2.0
@@ -636,6 +639,9 @@ packages:
 
   graceful-fs@4.2.11:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
+
+  hotkeys-js@4.0.0-beta.6:
+    resolution: {integrity: sha512-oR2ReRJcLnm4L4itKrSUMQSdec0P0KTPtIuP13JsYmkx4ls1a6iIFUi2WfzAE6wBmme1ptdJJ7qGxpwlO5emdA==}
 
   htmlparser2@10.0.0:
     resolution: {integrity: sha512-TwAZM+zE5Tq3lrEHvOlvwgj1XLWQCtaaibSN11Q+gGBAS7Y1uZSWwXXRe4iF6OXnaq1riyQAPFOBtYc77Mxq0g==}
@@ -1320,6 +1326,8 @@ snapshots:
     optional: true
 
   graceful-fs@4.2.11: {}
+
+  hotkeys-js@4.0.0-beta.6: {}
 
   htmlparser2@10.0.0:
     dependencies:
