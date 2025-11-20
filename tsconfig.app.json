@@ -32,5 +32,5 @@
     "noUnusedParameters": false, // 关闭未使用的参数错误
     "noImplicitReturns": true
   },
-  "include": ["src"]
+  "include": ["src", "example/request.ts", "example/menu.ts"]
 }
