@@ -1,6 +1,7 @@
 import { defineConfig } from "vite"
 import monkey from "vite-plugin-monkey"
 import pkg from "./package.json"
+import react from "@vitejs/plugin-react-swc"
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -10,8 +11,9 @@ export default defineConfig({
     },
   },
   plugins: [
+    react(),
     monkey({
-      entry: "src/main.ts",
+      entry: "src/main.tsx",
       userscript: {
         name: "学习油猴插件",
         // 可以是 data:image/png;base64,xxxx 格式的图片
@@ -26,8 +28,8 @@ export default defineConfig({
         // 反馈地址
         supportURL: `${pkg.repository.url}/issues`,
         // 插件匹配的网页（<protocol>://<domain><path>）或 * 例如（"*://*.csdn.net/*"）
-        match: ["https://www.google.com"],
-        // 脚本应该运行的页面。允许多个标签实例。 @include不支持URL哈希参数。您必须在没有哈希参数的情况下匹配路径并使用window.onurlchange
+        match: ["*://*/*"],
+        // 脚本应该运行的页面(可以配置具体运行的页面 path 路径)。允许多个标签实例。 @include不支持URL哈希参数。您必须在没有哈希参数的情况下匹配路径并使用window.onurlchange
         // include:[],
         // 插件排除的具体地址，即使他们在 @include 或  @match 中
         exclude: [""],
