@@ -28,6 +28,8 @@ export default defineConfig({
         namespace: pkg.repository.url,
         // 反馈地址
         supportURL: `${pkg.repository.url}/issues`,
+        // 如果代码有时候不执行, 可能是权限问题, 可以设置为 none, 但是无法使用 GM_* 的 API 并且上下文不隔离
+        grant: "*",
         // 插件匹配的网页（<protocol>://<domain><path>）或 * 例如（"*://*.csdn.net/*"）
         match: ["*://*/*"],
         // 脚本应该运行的页面(可以配置具体运行的页面 path 路径)。允许多个标签实例。 @include不支持URL哈希参数。您必须在没有哈希参数的情况下匹配路径并使用window.onurlchange

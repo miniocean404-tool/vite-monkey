@@ -16,6 +16,7 @@
   "scripts": {
     "dev": "vite --host --force",
     "build": "tsc && vite build",
+    "build:install": "pnpm build && pnpm preview",
     "preview": "vite preview"
   },
   "dependencies": {
